@@ -6,16 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tianChenChen/blog.git"
-  },
   "author": "tianchenchen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tianChenChen/blog/issues"
-  },
-  "homepage": "https://github.com/tianChenChen/blog#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookies": "^0.7.1",
