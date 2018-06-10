@@ -1,5 +1,6 @@
 var express=require('express');
 var swig=require('swig');
+var mongoose = require('mongoose');
 var app = express();
 
 // 设置静态文件托管
@@ -14,4 +15,11 @@ app.use('/admin', require('./routers/admin'))
 app.use('/api',require('./routers/api'))
 app.use('/', require('./routers/main'))
 
-app.listen(8082);
+mongoose.connect('mongodb://localhost:27017/blog',function(err){
+    if(err){
+        console.log('数据库连接失败')
+    }else{
+        console.log('数据连接成功');
+        app.listen(8082);
+    }
+});
