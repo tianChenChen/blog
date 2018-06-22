@@ -1,6 +1,7 @@
 var express=require('express');
 var swig=require('swig');
 var mongoose = require('mongoose');
+vaR bodyParser = require('body-parser');
 var app = express();
 
 // 设置静态文件托管
@@ -10,6 +11,8 @@ app.engine('html',swig.renderFile);
 app.set('views','./views');
 app.set('view engine', 'html');
 swig.setDefaults({cache: false});
+
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.use('/admin', require('./routers/admin'))
 app.use('/api',require('./routers/api'))
